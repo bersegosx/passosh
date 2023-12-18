@@ -130,7 +130,7 @@ class BoardingPassTransitType(str, Enum):
     TRAIN = 'PKTransitTypeTrain'
 
 
-@unique
+@dataclass
 class Location:
     """
     An object that represents a location that the system uses to show a relevant pass.
