@@ -128,3 +128,17 @@ class BoardingPassTransitType(str, Enum):
     BOAT =  'PKTransitTypeBoat'
     BUS = 'PKTransitTypeBus'
     TRAIN = 'PKTransitTypeTrain'
+
+
+@unique
+class Location:
+    """
+    An object that represents a location that the system uses to show a relevant pass.
+    """
+    latitude: float  # in degrees, of the location
+    longitude: float  # in degrees, of the location
+    altitude: float | None = None  # in meters, of the location
+
+    # the text to display on the lock screen when the pass is relevant.
+    # For example, a description of a nearby location, such as “Store nearby on 1st and Main”.
+    relevantText: str | None = None

@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
 from .fields import (HeaderField, PrimaryField, SecondaryField, BackField, AuxiliaryField, Barcode,
-                     BoardingPassTransitType)
+                     BoardingPassTransitType, Location)
 
 
 @dataclass
@@ -31,6 +31,7 @@ class Passosh:
     media: dict[str, bytes]
 
     barcodes: list[Barcode] = None
+    locations: list[Location] = None
 
     eventTicket: Content | None = None
     generic: Content | None = None
@@ -38,7 +39,7 @@ class Passosh:
     storeCard: Content | None = None
     boardingPass: ContentBoardingPass | None = None
 
-    description: str | None = None
+    backgroundColor: str | None = None  # CSS-style RGB triple, ex: "rgb(0, 185, 255)"
     foregroundColor: str | None = None
     labelColor: str | None = None
 
@@ -46,4 +47,25 @@ class Passosh:
     suppressStripShine: bool = False
     voided: bool = False
 
+    # The maximum distance, in meters, from a location in the locations array at which the pass is relevant.
+    # The system uses the smaller of either this distance or the default distance.
+    maxDistance: int | None = None
+
     relevantDate: str | None = None
+    expirationDate: str | None = None
+
+    # controls whether to show the Share button on the back of a pass.
+    # A value of true removes the button.
+    sharingProhibited: bool = False
+
+    logoText: str | None = None
+    description: str | None = None
+    appLaunchURL: str | None = None
+    associatedStoreIdentifiers: list[str] | None = None
+
+    authenticationToken: str | None = None
+    webServiceURL: str | None = None
+
+    # TODO: add types
+    semantics = None
+    userInfo: dict | None = None
