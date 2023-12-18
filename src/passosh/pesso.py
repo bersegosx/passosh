@@ -1,6 +1,8 @@
 from dataclasses import dataclass
-from app.fields import (HeaderField, PrimaryField, SecondaryField, BackField, AuxiliaryField, Barcode,
-                        BoardingPassTransitType)
+
+from .fields import (HeaderField, PrimaryField, SecondaryField, BackField, AuxiliaryField, Barcode,
+                     BoardingPassTransitType)
+
 
 @dataclass
 class Content:

@@ -6,8 +6,8 @@ from cryptography import x509
 from cryptography.hazmat.primitives import hashes, serialization
 from cryptography.hazmat.primitives.serialization import pkcs7
 
-from app.pesso import Passosh
-from app.zip import write_zip
+from .pesso import Passosh
+from .zip import write_zip
 
 
 def create_pass_data(passosh: Passosh) -> dict:

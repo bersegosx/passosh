@@ -1,6 +1,6 @@
-from enum import Enum, unique
 import dataclasses
 from dataclasses import dataclass
+from enum import Enum, unique
 
 
 @unique
