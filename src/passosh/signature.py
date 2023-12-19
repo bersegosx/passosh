@@ -1,6 +1,7 @@
 import hashlib
 import json
 from dataclasses import asdict
+from typing import BinaryIO
 
 from cryptography import x509
 from cryptography.hazmat.primitives import hashes, serialization
@@ -17,6 +18,9 @@ def create_pass_data(passosh: Passosh) -> dict:
     for k, v in result.copy().items():
         if v is None:
             del result[k]
+
+    # FIXME: dirty hack
+    del result['eventTicket']['auxiliaryFields']
 
     return result
 
@@ -52,7 +56,7 @@ def create_signature(manifest: dict, cert_pem: bytes, key: bytes, password: byte
     )
 
 
-def create_pkpass(passosh: Passosh, filename: str, sign: dict):
+def create_pkpass(passosh: Passosh, filename: BinaryIO, sign: dict):
     pass_data: dict = create_pass_data(passosh)
     pass_content = json.dumps(pass_data).encode()
 

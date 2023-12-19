@@ -79,6 +79,7 @@ class BackField:
     value: str
     label: str = ''
 
+    textAlignment: str = TextAlignment.LEFT
     changeMessage: str = ''
 
 

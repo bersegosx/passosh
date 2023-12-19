@@ -61,7 +61,7 @@ class Passosh:
     logoText: str | None = None
     description: str | None = None
     appLaunchURL: str | None = None
-    associatedStoreIdentifiers: list[str] | None = None
+    associatedStoreIdentifiers: list[int] | None = None
 
     authenticationToken: str | None = None
     webServiceURL: str | None = None
