@@ -69,12 +69,12 @@ passosh = Passosh(
 
 create_pkpass(
     passosh=passosh,
-    filename="you_filename.pkpass",
+    filename="your_filename.pkpass",
     sign=dict(
-        cert_pem=b'<pem cert content>',
-        key=b'<key content'>,
+        cert_pem=b'<content of certificate.pem>',
+        key=b'<key content>',
         password=b'<key\'s password>',
-        wwdr=b'<wwdr cet content>'
+        wwdr=b'<content of wwdr.pem>'
     )
 )
 
