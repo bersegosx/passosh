@@ -1,0 +1,6 @@
+[flake8]
+max-line-length = 120
+extend-ignore = C812
+exclude =
+      venv,
+      var

@@ -125,7 +125,7 @@ class Barcode:
 class BoardingPassTransitType(str, Enum):
     GENERIC = 'PKTransitTypeGeneric'
     AIR = 'PKTransitTypeAir'
-    BOAT =  'PKTransitTypeBoat'
+    BOAT = 'PKTransitTypeBoat'
     BUS = 'PKTransitTypeBus'
     TRAIN = 'PKTransitTypeTrain'
 
